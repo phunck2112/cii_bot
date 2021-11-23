@@ -4,7 +4,7 @@ import axios from 'axios';
 const API =
   'https://api.telegram.org/bot1936565766:AAHaKM-6fPRilJNdbguoBqmUnt_m_zrFlhw';
 const URI = '/webhook/1936565766:AAHaKM-6fPRilJNdbguoBqmUnt_m_zrFlhw';
-const WEBHOOK_URL = `https://7357d69e3757.ngrok.io${URI}`;
+const WEBHOOK_URL = `http://45.76.180.70:3000/${URI}`;
 
 @Injectable()
 export class AppService {
