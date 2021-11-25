@@ -1,14 +1,14 @@
-import { Body, Controller, Post, Get } from '@nestjs/common';
+import { Body, Controller, Post, Get, Req, Res } from '@nestjs/common';
 import { AppService } from './app.service';
 
 @Controller()
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  // @Post('webhook/1936565766:AAHaKM-6fPRilJNdbguoBqmUnt_m_zrFlhw')
-  // async getError(@Req() req: any, @Res() res: any) {
-  //   return await this.appService.getError(req, res);
-  // }
+  @Post('webhook/2121747561:AAGuyuDNbmXE_tIDL9Lmc1Xrn74WV0ZmHbE')
+  async getError(@Req() req: any, @Res() res: any) {
+    return await this.appService.getError(req, res);
+  }
 
   @Get()
   async setWebhook() {
@@ -18,5 +18,10 @@ export class AppController {
   @Post('sendBacklog')
   async sendMessage(@Body() data) {
     return await this.appService.sendMessage(data);
+  }
+
+  @Post('sendDeviceId')
+  async sendDeviceId(@Body() data) {
+    return await this.appService.sendDeviceId(data);
   }
 }
